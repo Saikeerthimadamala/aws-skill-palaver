@@ -1,0 +1,215 @@
+/* ==========================================================================
+   History Section Styles
+   ========================================================================== */
+
+.history-section {
+  padding: 80px 0;
+  background: var(--bg-subtle);
+}
+
+.history-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.history-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  border-color: #cbd5e1;
+  color: var(--text-main);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.history-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-history-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-fast);
+}
+
+.btn-history-action:hover {
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+
+/* History List & Cards */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  gap: 20px;
+}
+
+.history-card:hover {
+  box-shadow: 0 8px 18px -4px rgba(15, 23, 42, 0.07);
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.history-content {
+  flex: 1;
+}
+
+.history-text {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+
+.history-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.history-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* History Card Right Side */
+.history-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sentiment-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.history-score-col {
+  text-align: right;
+  min-width: 80px;
+}
+
+.history-score-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+}
+
+.history-score-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.history-load-btn {
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.history-load-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Empty State */
+.history-empty {
+  background: #ffffff;
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  margin-bottom: 12px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .history-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .history-badge-group {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-card);
+  }
+  .history-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

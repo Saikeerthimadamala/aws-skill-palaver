@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Global Design System & Reset - Sentify (Amazon Comprehend Sentiment Analysis)
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --primary-ring: rgba(37, 99, 235, 0.2);
+  
+  --secondary: #6366f1;
+  --accent-purple: #7c3aed;
+  
+  /* Neutral Grays */
+  --bg-page: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-card: #ffffff;
+  --border-light: #e2e8f0;
+  --border-card: #edf2f7;
+  
+  /* Text */
+  --text-main: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+
+  /* Sentiment Themes */
+  --pos-color: #10b981;
+  --pos-bg: #ecfdf5;
+  --pos-border: #a7f3d0;
+  
+  --neg-color: #ef4444;
+  --neg-bg: #fef2f2;
+  --neg-border: #fecaca;
+  
+  --neu-color: #64748b;
+  --neu-bg: #f8fafc;
+  --neu-border: #cbd5e1;
+  
+  --mix-color: #8b5cf6;
+  --mix-bg: #f5f3ff;
+  --mix-border: #ddd6fe;
+
+  /* AWS Brand Color */
+  --aws-orange: #ff9900;
+  --aws-dark: #232f3e;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+  --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.15);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--transition-normal);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section Header Utility */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Generic Button Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.28);
+  transition: all var(--transition-normal);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.38);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #ffffff;
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+  border-color: #cbd5e1;
+  color: var(--text-main);
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.45s ease forwards;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}
